@@ -1,6 +1,6 @@
 ﻿namespace gui
 {
-    partial class form1
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -28,92 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbPassword = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbUsername = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnlogin = new System.Windows.Forms.Button();
+            this.login = new System.Windows.Forms.TextBox();
+            this.pass = new System.Windows.Forms.TextBox();
+            this.typ = new System.Windows.Forms.ComboBox();
+            this.but = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // login
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Cursor = System.Windows.Forms.Cursors.No;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(323, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 31);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Logowanie";
+            this.login.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.login.Location = new System.Drawing.Point(398, 68);
+            this.login.MaximumSize = new System.Drawing.Size(300, 54);
+            this.login.MinimumSize = new System.Drawing.Size(300, 54);
+            this.login.Name = "login";
+            this.login.Size = new System.Drawing.Size(300, 54);
+            this.login.TabIndex = 0;
+            this.login.TextChanged += new System.EventHandler(this.login_TextChanged);
             // 
-            // tbPassword
+            // pass
             // 
-            this.tbPassword.Location = new System.Drawing.Point(329, 201);
-            this.tbPassword.MaximumSize = new System.Drawing.Size(100, 20);
-            this.tbPassword.MinimumSize = new System.Drawing.Size(100, 20);
-            this.tbPassword.Name = "tbPassword";
-            this.tbPassword.PasswordChar = '*';
-            this.tbPassword.Size = new System.Drawing.Size(100, 20);
-            this.tbPassword.TabIndex = 1;
-            this.tbPassword.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.pass.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.pass.Location = new System.Drawing.Point(398, 197);
+            this.pass.MaximumSize = new System.Drawing.Size(300, 54);
+            this.pass.MinimumSize = new System.Drawing.Size(300, 54);
+            this.pass.Name = "pass";
+            this.pass.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.pass.Size = new System.Drawing.Size(300, 54);
+            this.pass.TabIndex = 1;
             // 
-            // label2
+            // typ
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(174, 148);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.typ.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.typ.FormattingEnabled = true;
+            this.typ.Items.AddRange(new object[] {
+            "dealer",
+            "client",
+            "mechanic"});
+            this.typ.Location = new System.Drawing.Point(398, 320);
+            this.typ.MaximumSize = new System.Drawing.Size(300, 0);
+            this.typ.MinimumSize = new System.Drawing.Size(300, 0);
+            this.typ.Name = "typ";
+            this.typ.Size = new System.Drawing.Size(300, 54);
+            this.typ.TabIndex = 2;
+            this.typ.SelectedIndexChanged += new System.EventHandler(this.typ_SelectedIndexChanged);
             // 
-            // tbUsername
+            // but
             // 
-            this.tbUsername.Cursor = System.Windows.Forms.Cursors.Default;
-            this.tbUsername.Location = new System.Drawing.Point(329, 141);
-            this.tbUsername.MaximumSize = new System.Drawing.Size(100, 20);
-            this.tbUsername.MinimumSize = new System.Drawing.Size(100, 20);
-            this.tbUsername.Name = "tbUsername";
-            this.tbUsername.Size = new System.Drawing.Size(100, 20);
-            this.tbUsername.TabIndex = 3;
-            this.tbUsername.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.but.Location = new System.Drawing.Point(452, 437);
+            this.but.Name = "but";
+            this.but.Size = new System.Drawing.Size(75, 23);
+            this.but.TabIndex = 3;
+            this.but.Text = "button1";
+            this.but.UseVisualStyleBackColor = true;
+            this.but.Click += new System.EventHandler(this.but_Click_1);
             // 
-            // label3
+            // label4
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(174, 208);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label4.Location = new System.Drawing.Point(64, 57);
+            this.label4.MaximumSize = new System.Drawing.Size(300, 75);
+            this.label4.MinimumSize = new System.Drawing.Size(300, 75);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(300, 75);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Login";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnlogin
+            // label5
             // 
-            this.btnlogin.Location = new System.Drawing.Point(215, 268);
-            this.btnlogin.Name = "btnlogin";
-            this.btnlogin.Size = new System.Drawing.Size(75, 23);
-            this.btnlogin.TabIndex = 5;
-            this.btnlogin.Text = "Login";
-            this.btnlogin.UseVisualStyleBackColor = true;
-            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(64, 186);
+            this.label5.MaximumSize = new System.Drawing.Size(300, 75);
+            this.label5.MinimumSize = new System.Drawing.Size(300, 75);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(300, 75);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Hasło";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Location = new System.Drawing.Point(64, 309);
+            this.label6.MaximumSize = new System.Drawing.Size(300, 75);
+            this.label6.MinimumSize = new System.Drawing.Size(300, 75);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(300, 75);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Typ użytkownika";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnlogin);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbUsername);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbPassword);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(751, 499);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.but);
+            this.Controls.Add(this.typ);
+            this.Controls.Add(this.pass);
+            this.Controls.Add(this.login);
             this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,6 +148,14 @@
         private System.Windows.Forms.TextBox tbUsername;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnlogin;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox login;
+        private System.Windows.Forms.TextBox pass;
+        private System.Windows.Forms.ComboBox typ;
+        private System.Windows.Forms.Button but;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 

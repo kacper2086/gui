@@ -22,106 +22,80 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.listView3 = new System.Windows.Forms.ListView();
-            this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.part = new System.Windows.Forms.ComboBox();
+            this.client = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(241, 20);
+            this.label1.Location = new System.Drawing.Point(321, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(304, 42);
+            this.label1.Size = new System.Drawing.Size(378, 54);
             this.label1.TabIndex = 0;
             this.label1.Text = "Panel handlowca";
             // 
-            // listView2
+            // button1
             // 
-            this.listView2.HideSelection = false;
-            this.listView2.Location = new System.Drawing.Point(304, 183);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(279, 54);
-            this.listView2.TabIndex = 2;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.button1.Location = new System.Drawing.Point(178, 453);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(96, 93);
+            this.label2.Location = new System.Drawing.Point(82, 110);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 37);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 16);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Wydaj część";
             // 
-            // label3
+            // part
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.Location = new System.Drawing.Point(96, 183);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 37);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "label3";
+            this.part.FormattingEnabled = true;
+            this.part.Location = new System.Drawing.Point(85, 183);
+            this.part.Name = "part";
+            this.part.Size = new System.Drawing.Size(121, 24);
+            this.part.TabIndex = 4;
+            this.part.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // listView3
+            // client
             // 
-            this.listView3.HideSelection = false;
-            this.listView3.Location = new System.Drawing.Point(304, 278);
-            this.listView3.Name = "listView3";
-            this.listView3.Size = new System.Drawing.Size(279, 60);
-            this.listView3.TabIndex = 5;
-            this.listView3.UseCompatibleStateImageBehavior = false;
+            this.client.FormattingEnabled = true;
+            this.client.Location = new System.Drawing.Point(85, 285);
+            this.client.Name = "client";
+            this.client.Size = new System.Drawing.Size(121, 24);
+            this.client.TabIndex = 5;
             // 
-            // label4
+            // button2
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.Location = new System.Drawing.Point(96, 278);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(102, 37);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "label4";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(547, 372);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(207, 55);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Dodaj",
-            "Usuń"});
-            this.comboBox1.Location = new System.Drawing.Point(304, 108);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 8;
+            this.button2.Location = new System.Drawing.Point(85, 346);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // DealerForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.listView3);
-            this.Controls.Add(this.label3);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.client);
+            this.Controls.Add(this.part);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "DealerForm";
             this.Text = "dealerform";
             this.Load += new System.EventHandler(this.DealerForm_Load);
@@ -133,12 +107,10 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ListView listView3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox part;
+        private System.Windows.Forms.ComboBox client;
+        private System.Windows.Forms.Button button2;
     }
 }

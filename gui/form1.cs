@@ -1,92 +1,73 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Npgsql; // Dodaj namespace dla Npgsql
 
 namespace gui
 {
-    public partial class form1 : Form
+    public partial class Form1 : Form
     {
-        private Dictionary<string, (string, UserType)> users = new Dictionary<string, (string, UserType)>
-    {
-        { "client", ("client", UserType.Client) },
-        { "mech", ("mech", UserType.Mechanic) },
-        { "dealer", ("dealer", UserType.Dealer) }
-    };
-        public form1()
+        private string connectionString = "Host=localhost;Port=32769;Username=postgres;Password=mysecretpassword;Database=postgres";
+
+        public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void but_Click_1(object sender, EventArgs e)
         {
+            string Username = login.Text;
+            string password = pass.Text;
+            string userType = typ.SelectedItem.ToString();
+            
+            string query = "SELECT login, password, usertype FROM public.users WHERE \"login\" = @Username AND \"password\" = @Password AND \"usertype\" = @userType";
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnlogin_Click(object sender, EventArgs e)
-        {
-            string username = tbUsername.Text;
-            string password = tbUsername.Text;
-            if (users.ContainsKey(username))
+            using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
-                var (storedPassword, userType) = users[username];
+                NpgsqlCommand command = new NpgsqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Username", Username);
+                command.Parameters.AddWithValue("@Password", password);
+                command.Parameters.AddWithValue("@userType", userType);
 
-                if (password == storedPassword)
+                try
                 {
-                    // Logowanie powiodło się, przejdź do odpowiedniego formularza
-                    OpenUserForm(userType);
-                    this.Hide(); // Ukryj formularz logowania
+                    connection.Open();
+                    NpgsqlDataReader reader = command.ExecuteReader();
+
+                    if (reader.Read()) 
+                    {
+
+                        string userTypeFromDB = reader["UserType"].ToString();
+
+
+                        OpenUserForm(userTypeFromDB);
+                        this.Hide(); 
+                    }
+                    else
+                    {
+                        MessageBox.Show("Niepoprawne dane logowania", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Niepoprawne hasło", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Błąd połączenia z bazą danych: " + ex.Message);
                 }
             }
-            else
-            {
-                MessageBox.Show("Niepoprawny użytkownik", "Błąd logowania", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
-        public enum UserType
-        {
-            Client,
-            Mechanic,
-            Dealer
-        }
-        private void OpenUserForm(UserType userType)
+
+        private void OpenUserForm(string userType)
         {
             switch (userType)
             {
-                case UserType.Client:
+                case "Client":
                     ClientForm clientForm = new ClientForm();
                     clientForm.Show();
                     break;
-                case UserType.Mechanic:
+                case "Mechanic":
                     MechanicForm mechanicForm = new MechanicForm();
                     mechanicForm.Show();
                     break;
-                case UserType.Dealer:
+                case "dealer":
                     DealerForm dealerForm = new DealerForm();
                     dealerForm.Show();
                     break;
@@ -96,8 +77,21 @@ namespace gui
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
+            typ.Items.AddRange(new string[] { "Client", "Mechanic", "dealer" });
+            typ.SelectedIndex = 0; 
+        }
+
+        private void login_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void typ_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
-
-
