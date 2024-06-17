@@ -30,11 +30,9 @@
         {
             this.login = new System.Windows.Forms.TextBox();
             this.pass = new System.Windows.Forms.TextBox();
-            this.typ = new System.Windows.Forms.ComboBox();
             this.but = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // login
@@ -59,22 +57,6 @@
             this.pass.Size = new System.Drawing.Size(300, 54);
             this.pass.TabIndex = 1;
             // 
-            // typ
-            // 
-            this.typ.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.typ.FormattingEnabled = true;
-            this.typ.Items.AddRange(new object[] {
-            "dealer",
-            "client",
-            "mechanic"});
-            this.typ.Location = new System.Drawing.Point(398, 320);
-            this.typ.MaximumSize = new System.Drawing.Size(300, 0);
-            this.typ.MinimumSize = new System.Drawing.Size(300, 0);
-            this.typ.Name = "typ";
-            this.typ.Size = new System.Drawing.Size(300, 54);
-            this.typ.TabIndex = 2;
-            this.typ.SelectedIndexChanged += new System.EventHandler(this.typ_SelectedIndexChanged);
-            // 
             // but
             // 
             this.but.Location = new System.Drawing.Point(452, 437);
@@ -97,7 +79,6 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Loginos";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -112,27 +93,12 @@
             this.label5.Text = "Hasło";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label6.Location = new System.Drawing.Point(64, 309);
-            this.label6.MaximumSize = new System.Drawing.Size(300, 75);
-            this.label6.MinimumSize = new System.Drawing.Size(300, 75);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(300, 75);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Typ użytkownika";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Form1
             // 
             this.ClientSize = new System.Drawing.Size(751, 499);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.but);
-            this.Controls.Add(this.typ);
             this.Controls.Add(this.pass);
             this.Controls.Add(this.login);
             this.Name = "Form1";
@@ -152,11 +118,9 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.TextBox login;
         private System.Windows.Forms.TextBox pass;
-        private System.Windows.Forms.ComboBox typ;
         private System.Windows.Forms.Button but;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
     }
 }
 

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using Npgsql; // Dodaj namespace dla Npgsql
+using Npgsql;
 
 namespace gui
 {
     public partial class Form1 : Form
     {
-        private string connectionString = "Host=localhost;Port=32769;Username=postgres;Password=mysecretpassword;Database=postgres";
+        private string connectionString = "Host=localhost;Port=32768;Username=postgres;Password=mysecretpassword;Database=postgres";
 
         public Form1()
         {
@@ -18,30 +18,25 @@ namespace gui
         {
             string Username = login.Text;
             string password = pass.Text;
-            string userType = typ.SelectedItem.ToString();
-            
-            string query = "SELECT login, password, usertype FROM public.users WHERE \"login\" = @Username AND \"password\" = @Password AND \"usertype\" = @userType";
+
+            string query = "SELECT login, password, usertype FROM public.users WHERE \"login\" = @Username AND \"password\" = @Password";
 
             using (NpgsqlConnection connection = new NpgsqlConnection(connectionString))
             {
                 NpgsqlCommand command = new NpgsqlCommand(query, connection);
                 command.Parameters.AddWithValue("@Username", Username);
                 command.Parameters.AddWithValue("@Password", password);
-                command.Parameters.AddWithValue("@userType", userType);
 
                 try
                 {
                     connection.Open();
                     NpgsqlDataReader reader = command.ExecuteReader();
 
-                    if (reader.Read()) 
+                    if (reader.Read())
                     {
-
-                        string userTypeFromDB = reader["UserType"].ToString();
-
-
+                        string userTypeFromDB = reader["usertype"].ToString();
                         OpenUserForm(userTypeFromDB);
-                        this.Hide(); 
+                        this.Hide();
                     }
                     else
                     {
@@ -79,24 +74,11 @@ namespace gui
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-            typ.Items.AddRange(new string[] { "Client", "Mechanic", "dealer" });
-            typ.SelectedIndex = 0; 
+            // Usuwamy ComboBox i jego obsługę, ponieważ typ użytkownika jest teraz pobierany z bazy danych.
         }
 
         private void login_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void typ_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
